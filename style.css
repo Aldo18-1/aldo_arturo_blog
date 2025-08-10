@@ -1,0 +1,183 @@
+html {
+   /* background-color: #192AE3;*/
+   background-image: url(fondo.jpg);
+    border-image-repeat: no-;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+} 
+header {
+    background-color:#113D96;
+    color: #fff;
+    padding: 3rem 2rem;
+    text-align: center;
+    border: 3px solid purple;
+    border-radius: 23px;
+    
+}
+
+header h1 {
+    font-size: 4rem;
+    text-decoration: none;
+    border: 8px outset Blue;
+    border-radius: 1115px;
+    background-color: #8886FF91;
+}
+
+.alinear {
+    width: 700px;
+    margin: 0 auto;
+}
+
+section article {
+    background-color: #5CD74E;
+    margin: 1rem 0;
+    border-radius: 0.5rem;
+    padding: 0.25rem 0;
+}
+
+section article h2, section article em {
+    margin: 1rem;
+    color: Blue;
+    font-size: 2rem;
+}
+/*section article:hover {
+    box-shadow: 0 0,1rem o,4rem rgba(66, 68, 90, 0.3);
+}*/
+
+footer {
+    background-color: #061B45;
+    padding: 3rem;
+    color: #fff;
+}
+
+footer section {
+    float: right;
+}
+
+footer em {
+    margin: 0;
+}
+
+footer section a {
+    color: white;
+}
+
+.ir {
+    color: lavenderblush;
+}
+
+span {
+    color: #E41313;
+}
+
+.alert {
+    color: white;
+    font-size: 32px;
+    /*background-color: red;*/
+    border: 2px solid Black;
+    text-align: center;
+    position: fixed;
+    text-shadow: 4px 1px 0px black;
+    text-decoration: underline;
+    opacity: 0.4;
+    
+}
+
+.it:hover {
+    color: white;
+}
+
+.it:active {
+    color: black;
+}
+
+.it {
+    position: 0px 20px 40px 0px;
+    color: #EDEEB9;
+}
+button:hover {
+    color: brown;
+    background-color: black;
+    padding: 0;
+    margin: 0;
+}
+
+.sr {
+    position: fixed;
+}
+
+h3 {
+    background-color:  Green;
+    font-size: 2rem;
+    text-align: center;
+    color: #512354;
+}
+
+j {
+    color: Red;
+    text-decoration: underline;
+    text-decoration-color: white;
+}
+
+.link {
+    Color: Yellow;
+    font-size: 40px;
+    text-decoration: none;
+}
+
+.link:visited {
+    color: Yellow; 
+    
+}
+
+
+.link:hover {
+    color: Blue;
+}
+
+M {
+    color: Red;
+    
+}
+
+b {
+    color: White;
+}
+
+n {
+   color: black;
+}
+
+.info {
+    color: #0F10F3;
+    font-size: 35px;
+    background-color: white;
+}
+
+strong {
+    color: white;
+    position: fixed;
+    opacity: 0,2;
+}
+
+.icon{
+    width: 290px;
+    margin:0 auto;
+    opacity: 0.5;
+    border: 1px solid yellow;
+    border-radius: 50px;
+}
+
+summary {
+    background-color: darkred;
+    color: white;
+    font-size: 20px;
+}
+
+summary h1 {
+    color: green;
+    text-align: center;
+}
+
+controls {
+    color: Red;
+}
