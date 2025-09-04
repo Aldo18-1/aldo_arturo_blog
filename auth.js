@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (savedUser) {
         showStatus('Ya has iniciado sesión. Serás redirigido...', 'info');
         setTimeout(() => {
-            window.location.href = 'index.html';
+            window.location.href = 'principal.html';
         }, 2000);
     }
 });
@@ -98,7 +98,7 @@ form.addEventListener('submit', (e) => {
         
         // Simular carga antes de redirigir
         setTimeout(() => {
-            window.location.href = 'index.html';
+            window.location.href = 'principal.html';
         }, 1000);
     }
 });
