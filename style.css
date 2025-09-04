@@ -182,7 +182,37 @@ controls {
     color: Red;
 }
 
-re {
-   background-color: Red;
-   font-size:10px;
+.LINKED {
+    background-color: White;
+    text-align: center;
+    font-size: 5rem;
+    padding: 3rem 2rem;
+    
+}
+
+.texto_hola {
+    color: White;
+    font-size: 35px;
+}
+
+.avan {
+    color: Yellow;
+    font-size: 42px;
+    text-align: center;
+    background-color :#0F90FC;
+    
+}
+
+.a {
+    color: White;
+    font-size: 45px;
+    text-decoration: none;
+}
+#ctc {
+    color: yellow;
+    font-size: 35px;
+}
+
+.container {
+    background-color: Blue;
 }
