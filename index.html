@@ -1,1 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <div class="container">
+        <h1>Iniciar Sesión</h1>
+        <form id="loginForm">
+            <!-- Campo Nombre -->
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input 
+                    type="text" 
+                    id="nombre" 
+                    name="nombre" 
+                    placeholder="Ingresa tu nombre"
+                    autocomplete="given-name"
+                >
+                <span class="error-message" id="nombreError"></span>
+            </div>
 
+            <!-- Campo Apellidos -->
+            <div class="form-group">
+                <label for="apellidos">Apellidos:</label>
+                <input 
+                    type="text" 
+                    id="apellidos" 
+                    name="apellidos" 
+                    placeholder="Ingresa tus apellidos"
+                    autocomplete="family-name"
+                >
+                <span class="error-message" id="apellidosError"></span>
+            </div>
+
+            <!-- Botones de Acción -->
+            <div class="buttons-container">
+                <button type="submit" id="loginBtn">Iniciar Sesión</button>
+                <button type="button" id="clearBtn">Limpiar Formulario</button>
+            </div>
+
+            <!-- Botón para guardar en archivo -->
+            <button type="button" id="saveToFileBtn">Guardar en Archivo</button>
+
+            <!-- Mensaje de estado -->
+            <div id="statusMessage"></div>
+        </form>
+    </div>
+
+    <script src="auth.js"></script>
+</body>
+                  </html>
