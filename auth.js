@@ -1,4 +1,12 @@
 // Elementos del DOM
+document.addEventListener('click', function(event) {
+  const audio = document.getElementById('soundEffect');
+  audio.currentTime = 0; // Reinicia el audio si ya se está reproduciendo
+  audio.play().catch(error => {
+    // Maneja errores (ej: navegadores que bloquean la reproducción automática)
+    console.log("Error al reproducir el sonido:", error);
+  });
+});
 const form = document.getElementById('loginForm');
 const nombreInput = document.getElementById('nombre');
 const apellidosInput = document.getElementById('apellidos');
