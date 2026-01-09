@@ -4,52 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aldo Arturo Blog</title>
-    <!-- Vinculación del archivo CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div class="top-bar"></div>
 
-    <!-- HEADER ESTILO PIXEL -->
     <header class="main-header">
         <div class="logo">🔵 ALDO<span>ARTURO</span></div>
+        <!-- Aquí aparecerá el mensaje: Hola [Nombre] gracias por entrar aquí -->
+        <div id="welcome-banner" class="welcome-banner"></div>
     </header>
 
-    <nav>
-        <a href="#" onclick="navegar('index-page')">Inicio</a>
-        <a href="#" onclick="navegar('principal-page')">Blog</a>
-        <a href="#" onclick="navegar('hola-page')">Información</a>
+    <nav id="main-nav" style="display: none;">
+        <a href="#" onclick="navegar('principal-page')">Inicio / Blog</a>
+        <a href="#" onclick="navegar('hola-page')">¿Quién soy?</a>
         <a href="https://www.facebook.com/Al2elbry" target="_blank">Facebook</a>
+        <a href="#" onclick="cerrarSesion()" class="logout-link">Cerrar Sesión</a>
     </nav>
 
     <div class="container">
 
-        <!-- SECCIÓN 1: LOGIN -->
-        <section id="index-page" class="page-section active">
-            <div class="login-container">
-                <h1>Iniciar Sesión</h1>
+        <!-- SECCIÓN 1: LOGIN (Solo se ve si no hay sesión) -->
+        <section id="login-page" class="page-section active">
+            <div class="login-box">
+                <h1>Bienvenido al Blog</h1>
+                <p>Por favor, dinos tu nombre para comenzar:</p>
                 <form id="loginForm">
-                    <div class="form-group">
-                        <label for="nombre">Nombre:</label>
-                        <input type="text" id="nombre" placeholder="Ingresa tu nombre">
-                    </div>
-                    <div class="form-group">
-                        <label for="apellidos">Apellidos:</label>
-                        <input type="text" id="apellidos" placeholder="Ingresa tus apellidos">
-                    </div>
-                    <button type="button" onclick="navegar('principal-page')" class="btn-main">Entrar al Blog</button>
-                    <button type="button" id="clearBtn" class="btn-secondary">Limpiar</button>
+                    <input type="text" id="userNameInput" placeholder="Escribe tu nombre aquí..." required>
+                    <button type="button" onclick="iniciarSesion()" class="btn-main">Entrar al sitio</button>
                 </form>
             </div>
         </section>
 
         <!-- SECCIÓN 2: PRINCIPAL (EL BLOG) -->
         <section id="principal-page" class="page-section">
-            
-            <p class="alert">⚠️ SI ESTÁS USANDO MÓVIL ACTIVA MODO ESCRITORIO PARA MEJOR EXPERIENCIA.</p>
+            <p class="alert">⚠️ MODO ESCRITORIO RECOMENDADO EN MÓVILES.</p>
 
-            <!-- GRILLA SUPERIOR (HERO) -->
+            <!-- GRILLA ESTILO PIXEL -->
             <div class="hero-grid">
                 <article class="big-item">
                     <img src="foto1.jpg" alt="Foto principal">
@@ -72,9 +64,7 @@
                 </article>
             </div>
 
-            <!-- CONTENIDO Y BARRA LATERAL -->
             <div class="main-content">
-                
                 <main>
                     <article class="post">
                         <img src="foto9.jpg">
@@ -101,14 +91,6 @@
                         </div>
                     </article>
 
-                    <article class="post">
-                        <img src="foto16.jpg">
-                        <div class="post-info">
-                            <h2>La mejor foto del blog <j>(Creo)</j></h2>
-                            <em>Real es real y lo irreal irreal asi pos si</em>
-                        </div>
-                    </article>
-
                     <hr>
                     <audio src="audio.mp3" controls style="width: 100%;"></audio>
                 </main>
@@ -117,45 +99,33 @@
                     <div class="widget blue-widget">
                         <h3>Sobre Mí</h3>
                         <p>Created by Aldo Arturo 2025</p>
-                        <a href="mailto:aldoarturocarrazanacambar@gmail.com">📧 Escríbeme</a>
+                        <a href="mailto:aldoarturocarrazanacambar@gmail.com" style="color:white">📧 Escríbeme</a>
                     </div>
-
-                    <div class="widget gray-widget">
-                        <h3>Estado</h3>
-                        <p>Blog 100% <j>Real</j></p>
-                        <a href="#" onclick="navegar('hola-page')">👉🏻 Más Información</a>
-                    </div>
-                    
-                    <div class="clock-placeholder">
-                        RELOJ AQUÍ
-                    </div>
+                    <div class="clock-placeholder">RELOJ 2025</div>
                 </aside>
             </div>
         </section>
 
-        <!-- SECCIÓN 3: HOLA (INFO) -->
+        <!-- SECCIÓN 3: INFORMACIÓN (HOLA) -->
         <section id="hola-page" class="page-section">
-            <div class="info-container">
+            <div class="info-content">
                 <h1>¿Qué es esto?</h1>
                 <p>Esta es mi información: Actualización 01/09/2025.</p>
-                <p class="info-text">👉🏻 Hola mi Nombre es Aldo Arturo, este es mi pequeño blog en el que les he mostrado algunas fotos. Yo ahora estoy comenzando en la programación...</p>
-                <div class="details-box">
+                <p class="info-text">👉🏻 Hola mi Nombre es Aldo Arturo, este es mi pequeño blog. Estoy comenzando en la programación y espero valores este trabajo...</p>
+                <div class="details">
                     <h3>Otros Detalles</h3>
-                    <p>Como les comentaba antes estoy aprendiendo, así que por favor no me pidas que te haga uno todavía...</p>
+                    <p>Como les comentaba antes estoy aprendiendo, así que por favor no me pidas que te haga uno todavía por lo complicado del alojamiento.</p>
                 </div>
                 <a href="https://wa.me/5351257995" class="whatsapp-btn">Contactar por WhatsApp</a>
-                <br><br>
-                <button onclick="navegar('principal-page')" class="btn-secondary">Volver al Blog</button>
             </div>
         </section>
 
     </div>
 
     <footer class="main-footer">
-        <em>Esta página es creada por Aldo Arturo, Todos los derechos reservados. copyright 2025.</em>
+        <em>Creado por Aldo Arturo. Todos los derechos reservados &copy; 2025</em>
     </footer>
 
-    <!-- Vinculación del archivo JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>
