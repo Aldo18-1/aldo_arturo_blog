@@ -1,70 +1,40 @@
-// Ejecutar cuando cargue la página
+/**
+ * Función para cambiar entre las secciones del blog (SPA)
+ * @param {string} sectionId - El ID de la sección que queremos mostrar
+ */
+function navegar(sectionId) {
+    // 1. Obtener todas las secciones
+    const sections = document.querySelectorAll('.page-section');
+    
+    // 2. Ocultarlas todas quitando la clase 'active'
+    sections.forEach(sec => {
+        sec.classList.remove('active');
+    });
+
+    // 3. Mostrar la sección deseada añadiendo la clase 'active'
+    const targetSection = document.getElementById(sectionId);
+    if (targetSection) {
+        targetSection.classList.add('active');
+        
+        // 4. Subir el scroll al inicio automáticamente
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+}
+
+// Lógica para el botón "Limpiar" del formulario
 document.addEventListener('DOMContentLoaded', () => {
-    verificarSesion();
+    const clearBtn = document.getElementById('clearBtn');
+    if (clearBtn) {
+        clearBtn.addEventListener('click', () => {
+            const form = document.getElementById('loginForm');
+            form.reset();
+            alert('Formulario limpiado');
+        });
+    }
 });
 
-// Función para comprobar si hay un nombre guardado
-function verificarSesion() {
-    const nombreGuardado = localStorage.getItem('blog_usuario_nombre');
-    const banner = document.getElementById('welcome-banner');
-    const loginPage = document.getElementById('login-page');
-    const nav = document.getElementById('main-nav');
-
-    if (nombreGuardado) {
-        // SI EXISTE USUARIO:
-        banner.innerHTML = `Hola <span>${nombreGuardado}</span>, gracias por entrar aquí`;
-        banner.style.display = 'inline-block';
-        nav.style.display = 'flex';
-        
-        // Ocultar login y mostrar blog
-        loginPage.classList.remove('active');
-        navegar('principal-page');
-    } else {
-        // NO EXISTE USUARIO:
-        banner.style.display = 'none';
-        nav.style.display = 'none';
-        navegar('login-page');
-    }
-}
-
-// Función para guardar el nombre e iniciar sesión
-function iniciarSesion() {
-    const input = document.getElementById('userNameInput');
-    const nombre = input.value.trim();
-
-    if (nombre.length < 2) {
-        alert("Por favor, ingresa un nombre válido.");
-        return;
-    }
-
-    // GUARDAR EN EL NAVEGADOR (LocalStorage)
-    localStorage.setItem('blog_usuario_nombre', nombre);
-    
-    // Refrescar la vista
-    verificarSesion();
-}
-
-// Función para borrar los datos (Cerrar Sesión)
-function cerrarSesion() {
-    if (confirm("¿Seguro que quieres salir?")) {
-        localStorage.removeItem('blog_usuario_nombre');
-        location.reload(); // Recarga la página para volver al login
-    }
-}
-
-// Función para navegar entre secciones
-function navegar(sectionId) {
-    // Solo permitir navegar si hay sesión iniciada o si vamos al login
-    if (!localStorage.getItem('blog_usuario_nombre') && sectionId !== 'login-page') {
-        return;
-    }
-
-    const sections = document.querySelectorAll('.page-section');
-    sections.forEach(s => s.classList.remove('active'));
-
-    const target = document.getElementById(sectionId);
-    if (target) {
-        target.classList.add('active');
-        window.scrollTo(0, 0);
-    }
-}
+// Puedes añadir aquí la lógica de tu reloj en el futuro
+console.log("Blog de Aldo Arturo cargado correctamente.");
