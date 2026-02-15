@@ -18,7 +18,6 @@
     <a href="#" onclick="navegar('index-page')">Inicio</a>
     <a href="#" onclick="navegar('principal-page')">Blog</a>
     <a href="#" onclick="navegar('hola-page')">Información</a>
-    <a href="https://www.facebook.com/Al2elbry" target="_blank">Facebook</a>
 </nav>
 
 <div class="container">
@@ -27,21 +26,21 @@
     <section id="index-page" class="page-section active">
         <div class="login-container">
             <h1>Iniciar Sesión</h1>
-            <form id="loginForm">
+            <form>
                 <div class="form-group">
                     <label>Nombre:</label>
-                    <input type="text" id="nombre" placeholder="Ingresa tu nombre">
+                    <input type="text" id="nombre">
                 </div>
                 <div class="form-group">
                     <label>Apellidos:</label>
-                    <input type="text" id="apellidos" placeholder="Ingresa tus apellidos">
+                    <input type="text" id="apellidos">
                 </div>
 
                 <button type="button" onclick="guardarUsuario()" class="btn-main">
                     Entrar al Blog
                 </button>
 
-                <button type="button" id="clearBtn" class="btn-secondary">
+                <button type="button" onclick="limpiar()" class="btn-secondary">
                     Limpiar
                 </button>
             </form>
@@ -50,40 +49,25 @@
 
     <!-- BLOG -->
     <section id="principal-page" class="page-section">
-        <p class="alert">⚠️ SI ESTÁS USANDO MÓVIL ACTIVA MODO ESCRITORIO PARA MEJOR EXPERIENCIA.</p>
-
-        <div class="hero-grid">
-            <article class="big-item">
-                <img src="foto1.jpg">
-                <div class="hero-caption">
-                    <h2>Una foto con mi móvil</h2>
-                    <p>Estoy muy feliz por la foto que estoy haciendo.</p>
-                </div>
-            </article>
-        </div>
+        <h2 id="bienvenida"></h2>
+        <p>Bienvenido a tu blog</p>
     </section>
 
     <!-- INFO -->
     <section id="hola-page" class="page-section">
-        <div class="info-container">
-            <h1>¿Qué es esto?</h1>
-            <p>Esta es mi información: Actualización 2026.</p>
-            <button onclick="navegar('principal-page')" class="btn-secondary">
-                Volver al Blog
-            </button>
-        </div>
+        <h2>Información</h2>
+        <button onclick="navegar('principal-page')">Volver</button>
     </section>
 
 </div>
 
 <footer class="main-footer">
-    <em>Esta página es creada por Aldo Arturo, copyright 2026.</em>
+    <em>Copyright 2026</em>
 </footer>
 
-<!-- ================= JAVASCRIPT ================= -->
 <script>
 
-// Navegación entre secciones
+// Navegar entre páginas
 function navegar(id) {
     document.querySelectorAll('.page-section').forEach(sec => {
         sec.classList.remove('active');
@@ -91,41 +75,51 @@ function navegar(id) {
     document.getElementById(id).classList.add('active');
 }
 
-// Limpiar formulario
-document.getElementById("clearBtn").addEventListener("click", function() {
+// Limpiar campos
+function limpiar() {
     document.getElementById("nombre").value = "";
     document.getElementById("apellidos").value = "";
-});
+}
 
-// Guardar usuario en el servidor
+// Guardar usuario en el navegador
 function guardarUsuario() {
-
     const nombre = document.getElementById("nombre").value.trim();
     const apellidos = document.getElementById("apellidos").value.trim();
 
     if (!nombre || !apellidos) {
-        alert("Por favor completa los campos");
+        alert("Completa los campos");
         return;
     }
 
-    fetch("/guardar-usuario", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            nombre: nombre,
-            apellidos: apellidos
-        })
-    })
-    .then(res => res.json())
-    .then(data => {
-        alert(data.mensaje);
-        navegar("principal-page");
-    })
-    .catch(() => {
-        alert("Error: el servidor no está funcionando");
-    });
+    // Obtener usuarios guardados
+    let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+
+    const nuevoUsuario = {
+        nombre: nombre,
+        apellidos: apellidos,
+        fecha: new Date()
+    };
+
+    usuarios.push(nuevoUsuario);
+
+    // Guardar en el navegador
+    localStorage.setItem("usuarios", JSON.stringify(usuarios));
+
+    // Mostrar bienvenida
+    document.getElementById("bienvenida").innerText =
+        "Bienvenido " + nombre + " " + apellidos;
+
+    navegar("principal-page");
+}
+
+// Mostrar último usuario al abrir
+window.onload = function() {
+    let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+    if (usuarios.length > 0) {
+        let ultimo = usuarios[usuarios.length - 1];
+        document.getElementById("bienvenida").innerText =
+            "Bienvenido " + ultimo.nombre + " " + ultimo.apellidos;
+    }
 }
 
 </script>
