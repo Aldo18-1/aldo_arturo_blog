@@ -4,125 +4,482 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aldo Arturo Blog</title>
+    <!-- Vinculación del archivo CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="top-bar"></div>
+    <div class="top-bar"></div>
 
-<header class="main-header">
-    <div class="logo">🔵 ALDO<span>ARTURO</span></div>
-</header>
+    <!-- HEADER ESTILO PIXEL -->
+    <header class="main-header">
+        <div class="logo">🔵 ALDO<span>ARTURO</span></div>
+    </header>
 
-<nav>
-    <a href="#" onclick="navegar('index-page')">Inicio</a>
-    <a href="#" onclick="navegar('principal-page')">Blog</a>
-    <a href="#" onclick="navegar('hola-page')">Información</a>
-</nav>
+    <nav>
+        <a href="#" onclick="navegar('index-page')">Inicio</a>
+        <a href="#" onclick="navegar('principal-page')">Blog</a>
+        <a href="#" onclick="navegar('hola-page')">Información</a>
+        <a href="https://www.facebook.com/Al2elbry" target="_blank">Facebook</a>
+    </nav>
 
-<div class="container">
+    <div class="container">
 
-    <!-- LOGIN -->
-    <section id="index-page" class="page-section active">
-        <div class="login-container">
-            <h1>Iniciar Sesión</h1>
-            <form>
-                <div class="form-group">
-                    <label>Nombre:</label>
-                    <input type="text" id="nombre">
+        <!-- SECCIÓN 1: LOGIN -->
+        <section id="index-page" class="page-section active">
+            <div class="login-container">
+                <h1>Iniciar Sesión</h1>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" placeholder="Ingresa tu nombre">
+                    </div>
+                    <div class="form-group">
+                        <label for="apellidos">Apellidos:</label>
+                        <input type="text" id="apellidos" placeholder="Ingresa tus apellidos">
+                    </div>
+                    <button type="button" onclick="navegar('principal-page')" class="btn-main">Entrar al Blog</button>
+                    <button type="button" id="clearBtn" class="btn-secondary">Limpiar</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 2: PRINCIPAL (EL BLOG) -->
+        <section id="principal-page" class="page-section">
+            
+            <p class="alert">⚠️ SI ESTÁS USANDO MÓVIL ACTIVA MODO ESCRITORIO PARA MEJOR EXPERIENCIA.</p>
+
+            <!-- GRILLA SUPERIOR (HERO) -->
+            <div class="hero-grid">
+                <article class="big-item">
+                    <img src="foto1.jpg" alt="Foto principal">
+                    <div class="hero-caption">
+                        <h2>Una foto con mi móvil</h2>
+                        <p>Estoy muy feliz por la foto que estoy haciendo.</p>
+                    </div>
+                </article>
+                <article>
+                    <img src="foto11.jpg" alt="Barba">
+                    <div class="hero-caption small-caption">
+                        <h3>Mi Barbita jaja</h3>
+                    </div>
+                </article>
+                <article>
+                    <img src="foto2.jpg" alt="Novia">
+                    <div class="hero-caption small-caption">
+                        <h3>Texto Decorado</h3>
+                    </div>
+                </article>
+            </div>
+
+            <!-- CONTENIDO Y BARRA LATERAL -->
+            <div class="main-content">
+                
+                <main>
+                    <article class="post">
+                        <img src="foto9.jpg">
+                        <div class="post-info">
+                            <h2>Una foto con mi Novia Nidia</h2>
+                            <em>Una foto de parejas!</em><br>
+                            <small>Estoy muy feliz.</small>
+                        </div>
+                    </article>
+
+                    <article class="post">
+                        <img src="foto4.jpg">
+                        <div class="post-info">
+                            <h2>Una foto de mi novia</h2>
+                            <em>Efecto <b>Blanco</b> y <n>Negro</n>.</em>
+                        </div>
+                    </article>
+
+                    <article class="post">
+                        <img src="foto12.jpg">
+                        <div class="post-info">
+                            <h2>Mi nena'h 😘</h2>
+                            <em>Mi chica <j>Hermosa</j></em>
+                        </div>
+                    </article>
+
+                    <article class="post">
+                        <img src="foto16.jpg">
+                        <div class="post-info">
+                            <h2>La mejor foto del blog <j>(Creo)</j></h2>
+                            <em>Real es real y lo irreal irreal asi pos si</em>
+                        </div>
+                    </article>
+
+                    <hr>
+                    <audio src="audio.mp3" controls style="width: 100%;"></audio>
+                </main>
+
+                <aside>
+                    <div class="widget blue-widget">
+                        <h3>Sobre Mí</h3>
+                        <p>Created by Aldo Arturo 2025</p>
+                        <a href="mailto:aldoarturocarrazanacambar@gmail.com">📧 Escríbeme</a>
+                    </div>
+
+                    <div class="widget gray-widget">
+                        <h3>Estado</h3>
+                        <p>Blog 100% <j>Real</j></p>
+                        <a href="#" onclick="navegar('hola-page')">👉🏻 Más Información</a>
+                    </div>
+                    
+                    <div class="clock-placeholder">
+                        RELOJ AQUÍ
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 3: HOLA (INFO) -->
+        <section id="hola-page" class="page-section">
+            <div class="info-container">
+                <h1>¿Qué es esto?</h1>
+                <p>Esta es mi información: Actualización 09/01/2026.</p>
+                <p class="info-text">👉🏻 Hola mi Nombre es Aldo Arturo, este es mi pequeño blog en el que les he mostrado algunas fotos. Yo ahora estoy comenzando en la programación...</p>
+                <div class="details-box">
+                    <h3>Otros Detalles</h3>
+                    <p>Como les comentaba antes estoy aprendiendo, así que por favor no me pidas que te haga uno todavía...</p>
                 </div>
-                <div class="form-group">
-                    <label>Apellidos:</label>
-                    <input type="text" id="apellidos">
+                <a href="https://wa.me/5351257995" class="whatsapp-btn">Contactar por WhatsApp</a>
+                <br><br>
+                <button onclick="navegar('principal-page')" class="btn-secondary">Volver al Blog</button>
+            </div>
+        </section>
+
+    </div>
+
+    <footer class="main-footer">
+        <em>Esta página es creada por Aldo Arturo, Todos los derechos reservados. copyright 2026.</em>
+    </footer>
+
+    <!-- Vinculación del archivo JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aldo Arturo Blog</title>
+    <!-- Vinculación del archivo CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="top-bar"></div>
+
+    <!-- HEADER ESTILO PIXEL -->
+    <header class="main-header">
+        <div class="logo">🔵 ALDO<span>ARTURO</span></div>
+    </header>
+
+    <nav>
+        <a href="#" onclick="navegar('index-page')">Inicio</a>
+        <a href="#" onclick="navegar('principal-page')">Blog</a>
+        <a href="#" onclick="navegar('hola-page')">Información</a>
+        <a href="https://www.facebook.com/Al2elbry" target="_blank">Facebook</a>
+    </nav>
+
+    <div class="container">
+
+        <!-- SECCIÓN 1: LOGIN -->
+        <section id="index-page" class="page-section active">
+            <div class="login-container">
+                <h1>Iniciar Sesión</h1>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" placeholder="Ingresa tu nombre">
+                    </div>
+                    <div class="form-group">
+                        <label for="apellidos">Apellidos:</label>
+                        <input type="text" id="apellidos" placeholder="Ingresa tus apellidos">
+                    </div>
+                    <button type="button" onclick="navegar('principal-page')" class="btn-main">Entrar al Blog</button>
+                    <button type="button" id="clearBtn" class="btn-secondary">Limpiar</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 2: PRINCIPAL (EL BLOG) -->
+        <section id="principal-page" class="page-section">
+            
+            <p class="alert">⚠️ SI ESTÁS USANDO MÓVIL ACTIVA MODO ESCRITORIO PARA MEJOR EXPERIENCIA.</p>
+
+            <!-- GRILLA SUPERIOR (HERO) -->
+            <div class="hero-grid">
+                <article class="big-item">
+                    <img src="foto1.jpg" alt="Foto principal">
+                    <div class="hero-caption">
+                        <h2>Una foto con mi móvil</h2>
+                        <p>Estoy muy feliz por la foto que estoy haciendo.</p>
+                    </div>
+                </article>
+                <article>
+                    <img src="foto11.jpg" alt="Barba">
+                    <div class="hero-caption small-caption">
+                        <h3>Mi Barbita jaja</h3>
+                    </div>
+                </article>
+                <article>
+                    <img src="foto2.jpg" alt="Novia">
+                    <div class="hero-caption small-caption">
+                        <h3>Texto Decorado</h3>
+                    </div>
+                </article>
+            </div>
+
+            <!-- CONTENIDO Y BARRA LATERAL -->
+            <div class="main-content">
+                
+                <main>
+                    <article class="post">
+                        <img src="foto9.jpg">
+                        <div class="post-info">
+                            <h2>Una foto con mi Novia Nidia</h2>
+                            <em>Una foto de parejas!</em><br>
+                            <small>Estoy muy feliz.</small>
+                        </div>
+                    </article>
+
+                    <article class="post">
+                        <img src="foto4.jpg">
+                        <div class="post-info">
+                            <h2>Una foto de mi novia</h2>
+                            <em>Efecto <b>Blanco</b> y <n>Negro</n>.</em>
+                        </div>
+                    </article>
+
+                    <article class="post">
+                        <img src="foto12.jpg">
+                        <div class="post-info">
+                            <h2>Mi nena'h 😘</h2>
+                            <em>Mi chica <j>Hermosa</j></em>
+                        </div>
+                    </article>
+
+                    <article class="post">
+                        <img src="foto16.jpg">
+                        <div class="post-info">
+                            <h2>La mejor foto del blog <j>(Creo)</j></h2>
+                            <em>Real es real y lo irreal irreal asi pos si</em>
+                        </div>
+                    </article>
+
+                    <hr>
+                    <audio src="audio.mp3" controls style="width: 100%;"></audio>
+                </main>
+
+                <aside>
+                    <div class="widget blue-widget">
+                        <h3>Sobre Mí</h3>
+                        <p>Created by Aldo Arturo 2025</p>
+                        <a href="mailto:aldoarturocarrazanacambar@gmail.com">📧 Escríbeme</a>
+                    </div>
+
+                    <div class="widget gray-widget">
+                        <h3>Estado</h3>
+                        <p>Blog 100% <j>Real</j></p>
+                        <a href="#" onclick="navegar('hola-page')">👉🏻 Más Información</a>
+                    </div>
+                    
+                    <div class="clock-placeholder">
+                        RELOJ AQUÍ
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 3: HOLA (INFO) -->
+        <section id="hola-page" class="page-section">
+            <div class="info-container">
+                <h1>¿Qué es esto?</h1>
+                <p>Esta es mi información: Actualización 09/01/2026.</p>
+                <p class="info-text">👉🏻 Hola mi Nombre es Aldo Arturo, este es mi pequeño blog en el que les he mostrado algunas fotos. Yo ahora estoy comenzando en la programación...</p>
+                <div class="details-box">
+                    <h3>Otros Detalles</h3>
+                    <p>Como les comentaba antes estoy aprendiendo, así que por favor no me pidas que te haga uno todavía...</p>
                 </div>
+                <a href="https://wa.me/5351257995" class="whatsapp-btn">Contactar por WhatsApp</a>
+                <br><br>
+                <button onclick="navegar('principal-page')" class="btn-secondary">Volver al Blog</button>
+            </div>
+        </section>
 
-                <button type="button" onclick="guardarUsuario()" class="btn-main">
-                    Entrar al Blog
-                </button>
+    </div>
 
-                <button type="button" onclick="limpiar()" class="btn-secondary">
-                    Limpiar
-                </button>
-            </form>
-        </div>
-    </section>
+    <footer class="main-footer">
+        <em>Esta página es creada por Aldo Arturo, Todos los derechos reservados. copyright 2026.</em>
+    </footer>
 
-    <!-- BLOG -->
-    <section id="principal-page" class="page-section">
-        <h2 id="bienvenida"></h2>
-        <p>Bienvenido a tu blog</p>
-    </section>
+    <!-- Vinculación del archivo JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
 
-    <!-- INFO -->
-    <section id="hola-page" class="page-section">
-        <h2>Información</h2>
-        <button onclick="navegar('principal-page')">Volver</button>
-    </section>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aldo Arturo Blog</title>
+    <!-- Vinculación del archivo CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-</div>
+    <div class="top-bar"></div>
 
-<footer class="main-footer">
-    <em>Copyright 2026</em>
-</footer>
+    <!-- HEADER ESTILO PIXEL -->
+    <header class="main-header">
+        <div class="logo">🔵 ALDO<span>ARTURO</span></div>
+    </header>
 
-<script>
+    <nav>
+        <a href="#" onclick="navegar('index-page')">Inicio</a>
+        <a href="#" onclick="navegar('principal-page')">Blog</a>
+        <a href="#" onclick="navegar('hola-page')">Información</a>
+        <a href="https://www.facebook.com/Al2elbry" target="_blank">Facebook</a>
+    </nav>
 
-// Navegar entre páginas
-function navegar(id) {
-    document.querySelectorAll('.page-section').forEach(sec => {
-        sec.classList.remove('active');
-    });
-    document.getElementById(id).classList.add('active');
-}
+    <div class="container">
 
-// Limpiar campos
-function limpiar() {
-    document.getElementById("nombre").value = "";
-    document.getElementById("apellidos").value = "";
-}
+        <!-- SECCIÓN 1: LOGIN -->
+        <section id="index-page" class="page-section active">
+            <div class="login-container">
+                <h1>Iniciar Sesión</h1>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" placeholder="Ingresa tu nombre">
+                    </div>
+                    <div class="form-group">
+                        <label for="apellidos">Apellidos:</label>
+                        <input type="text" id="apellidos" placeholder="Ingresa tus apellidos">
+                    </div>
+                    <button type="button" onclick="navegar('principal-page')" class="btn-main">Entrar al Blog</button>
+                    <button type="button" id="clearBtn" class="btn-secondary">Limpiar</button>
+                </form>
+            </div>
+        </section>
 
-// Guardar usuario en el navegador
-function guardarUsuario() {
-    const nombre = document.getElementById("nombre").value.trim();
-    const apellidos = document.getElementById("apellidos").value.trim();
+        <!-- SECCIÓN 2: PRINCIPAL (EL BLOG) -->
+        <section id="principal-page" class="page-section">
+            
+            <p class="alert">⚠️ SI ESTÁS USANDO MÓVIL ACTIVA MODO ESCRITORIO PARA MEJOR EXPERIENCIA.</p>
 
-    if (!nombre || !apellidos) {
-        alert("Completa los campos");
-        return;
-    }
+            <!-- GRILLA SUPERIOR (HERO) -->
+            <div class="hero-grid">
+                <article class="big-item">
+                    <img src="foto1.jpg" alt="Foto principal">
+                    <div class="hero-caption">
+                        <h2>Una foto con mi móvil</h2>
+                        <p>Estoy muy feliz por la foto que estoy haciendo.</p>
+                    </div>
+                </article>
+                <article>
+                    <img src="foto11.jpg" alt="Barba">
+                    <div class="hero-caption small-caption">
+                        <h3>Mi Barbita jaja</h3>
+                    </div>
+                </article>
+                <article>
+                    <img src="foto2.jpg" alt="Novia">
+                    <div class="hero-caption small-caption">
+                        <h3>Texto Decorado</h3>
+                    </div>
+                </article>
+            </div>
 
-    // Obtener usuarios guardados
-    let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+            <!-- CONTENIDO Y BARRA LATERAL -->
+            <div class="main-content">
+                
+                <main>
+                    <article class="post">
+                        <img src="foto9.jpg">
+                        <div class="post-info">
+                            <h2>Una foto con mi Novia Nidia</h2>
+                            <em>Una foto de parejas!</em><br>
+                            <small>Estoy muy feliz.</small>
+                        </div>
+                    </article>
 
-    const nuevoUsuario = {
-        nombre: nombre,
-        apellidos: apellidos,
-        fecha: new Date()
-    };
+                    <article class="post">
+                        <img src="foto4.jpg">
+                        <div class="post-info">
+                            <h2>Una foto de mi novia</h2>
+                            <em>Efecto <b>Blanco</b> y <n>Negro</n>.</em>
+                        </div>
+                    </article>
 
-    usuarios.push(nuevoUsuario);
+                    <article class="post">
+                        <img src="foto12.jpg">
+                        <div class="post-info">
+                            <h2>Mi nena'h 😘</h2>
+                            <em>Mi chica <j>Hermosa</j></em>
+                        </div>
+                    </article>
 
-    // Guardar en el navegador
-    localStorage.setItem("usuarios", JSON.stringify(usuarios));
+                    <article class="post">
+                        <img src="foto16.jpg">
+                        <div class="post-info">
+                            <h2>La mejor foto del blog <j>(Creo)</j></h2>
+                            <em>Real es real y lo irreal irreal asi pos si</em>
+                        </div>
+                    </article>
 
-    // Mostrar bienvenida
-    document.getElementById("bienvenida").innerText =
-        "Bienvenido " + nombre + " " + apellidos;
+                    <hr>
+                    <audio src="audio.mp3" controls style="width: 100%;"></audio>
+                </main>
 
-    navegar("principal-page");
-}
+                <aside>
+                    <div class="widget blue-widget">
+                        <h3>Sobre Mí</h3>
+                        <p>Created by Aldo Arturo 2025</p>
+                        <a href="mailto:aldoarturocarrazanacambar@gmail.com">📧 Escríbeme</a>
+                    </div>
 
-// Mostrar último usuario al abrir
-window.onload = function() {
-    let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
-    if (usuarios.length > 0) {
-        let ultimo = usuarios[usuarios.length - 1];
-        document.getElementById("bienvenida").innerText =
-            "Bienvenido " + ultimo.nombre + " " + ultimo.apellidos;
-    }
-}
+                    <div class="widget gray-widget">
+                        <h3>Estado</h3>
+                        <p>Blog 100% <j>Real</j></p>
+                        <a href="#" onclick="navegar('hola-page')">👉🏻 Más Información</a>
+                    </div>
+                    
+                    <div class="clock-placeholder">
+                        RELOJ AQUÍ
+                    </div>
+                </aside>
+            </div>
+        </section>
 
-</script>
+        <!-- SECCIÓN 3: HOLA (INFO) -->
+        <section id="hola-page" class="page-section">
+            <div class="info-container">
+                <h1>¿Qué es esto?</h1>
+                <p>Esta es mi información: Actualización 09/01/2026.</p>
+                <p class="info-text">👉🏻 Hola mi Nombre es Aldo Arturo, este es mi pequeño blog en el que les he mostrado algunas fotos. Yo ahora estoy comenzando en la programación...</p>
+                <div class="details-box">
+                    <h3>Otros Detalles</h3>
+                    <p>Como les comentaba antes estoy aprendiendo, así que por favor no me pidas que te haga uno todavía...</p>
+                </div>
+                <a href="https://wa.me/5351257995" class="whatsapp-btn">Contactar por WhatsApp</a>
+                <br><br>
+                <button onclick="navegar('principal-page')" class="btn-secondary">Volver al Blog</button>
+            </div>
+        </section>
 
+    </div>
+
+    <footer class="main-footer">
+        <em>Esta página es creada por Aldo Arturo, Todos los derechos reservados. copyright 2026.</em>
+    </footer>
+
+    <!-- Vinculación del archivo JavaScript -->
+    <script src="script.js"></script>
 </body>
 </html>
