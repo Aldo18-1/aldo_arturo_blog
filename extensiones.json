@@ -1,0 +1,89 @@
+{
+  "nombre": "Dracula Theme",
+  "version": "1.0.0",
+  "descripcion": "Tema oscuro Dracula para editor de código",
+  "autor": "Tu Nombre",
+  "tipo": "tema",
+  "paleta": {
+    "fondo": "#282a36",
+    "fondoSecundario": "#1e1f29",
+    "fondoTerciario": "#343746",
+    "textoPrincipal": "#f8f8f2",
+    "textoSecundario": "#6272a4",
+    "bordes": "#44475a",
+    "seleccion": "#44475a",
+    "lineaActual": "#44475a"
+  },
+  "sintaxis": {
+    "comentario": "#6272a4",
+    "palabraClave": "#ff79c6",
+    "funcion": "#50fa7b",
+    "numero": "#bd93f9",
+    "string": "#f1fa8c",
+    "operador": "#ff79c6",
+    "variable": "#f8f8f2",
+    "clase": "#8be9fd",
+    "atributo": "#50fa7b",
+    "constante": "#bd93f9",
+    "etiqueta": "#ff79c6",
+    "propiedad": "#f8f8f2",
+    "unidad": "#f1fa8c",
+    "selector": "#ff79c6"
+  },
+  "editor": {
+    "gutter": {
+      "fondo": "#282a36",
+      "texto": "#6272a4",
+      "lineaActual": "#f8f8f2"
+    },
+    "lineaActiva": {
+      "fondo": "#44475a",
+      "borde": "#6272a4"
+    },
+    "cursor": "#f8f8f2",
+    "buscar": {
+      "fondo": "#ff79c6",
+      "texto": "#282a36"
+    },
+    "autocompletado": {
+      "fondo": "#282a36",
+      "texto": "#f8f8f2",
+      "seleccion": "#44475a"
+    },
+    "numerosLinea": "#6272a4",
+    "regla": "#44475a",
+    "emparejamiento": {
+      "corchetes": "#f1fa8c",
+      "etiquetas": "#ff79c6"
+    }
+  },
+  "interfaz": {
+    "barraTitulo": "#191a21",
+    "panel": "#1e1f29",
+    "boton": {
+      "fondo": "#44475a",
+      "texto": "#f8f8f2",
+      "hover": "#6272a4"
+    },
+    "scrollbar": "#44475a",
+    "input": {
+      "fondo": "#282a36",
+      "borde": "#44475a",
+      "texto": "#f8f8f2"
+    },
+    "pestanas": {
+      "activa": "#282a36",
+      "inactiva": "#1e1f29",
+      "textoActivo": "#f8f8f2",
+      "textoInactivo": "#6272a4"
+    }
+  },
+  "terminal": {
+    "fondo": "#282a36",
+    "texto": "#f8f8f2",
+    "prompt": "#50fa7b",
+    "error": "#ff5555",
+    "exito": "#50fa7b",
+    "advertencia": "#f1fa8c"
+  }
+}
