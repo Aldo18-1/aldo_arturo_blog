@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Musica y letras.</title>
+     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&family=Lora:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Nunito:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
+
+        :root {
+            --bg: #f5f7fb;
+            --card: #ffffff;
+            --text: #111827;
+            --muted: #6b7280;
+            --blue: #2563EB;
+            --blue-light: #3B82F6;
+            --red: #DC2626;
+            --red-light: #EF4444;
+            --border: #dbe3ef;
+            --shadow: 0 10px 25px rgba(37, 99, 235, .08), 0 5px 12px rgba(220, 38, 38, .05);
+            --radius: 20px;
+            --font-family: 'Inter', sans-serif;
+        }
+
+        body.dark {
+            --bg: #0f172a;
+            --card: #111827;
+            --text: #f3f4f6;
+            --muted: #9ca3af;
+            --blue: #3B82F6;
+            --blue-light: #60A5FA;
+            --red: #EF4444;
+            --red-light: #F87171;
+            --border: #1f2937;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: var(--font-family);
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            transition: .3s ease;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px;
+            text-align: center;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 40px;
+            box-shadow: var(--shadow);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, var(--blue), var(--red));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: var(--muted);
+        }
+
+        .credits {
+            margin-top: 30px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+            animation: fadeInUp 2s ease;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 0.8; transform: translateY(0); }
+        }
+
+        /* ========== COMMENTED SECTION FOR FUTURE USE ========== */
+        
+        .music-section {
+            margin-top: 40px;
+            text-align: left;
+        }
+        .file-button {
+            display: inline-block;
+            margin: 5px;
+            padding: 10px 16px;
+            background: var(--blue);
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        .lyrics-container {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 20px;
+            margin-top: 15px;
+        }
+        .bracket-text {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="dark">
+
+    <!-- <div class="container">
+        <h1>🚧 Página en Mantenimiento</h1>
+        <p>Esta sección no está disponible en este momento. Estamos trabajando para traerte contenido increíble muy pronto.</p>
+        <p>Por favor, vuelve más tarde o visita la <a href="index.html">página principal</a>.</p>
+
+        Créditos dinámicos estilo película
+        <div class="credits">
+            <p>✨ Este blog ha sido creado para uso personal, sin fines de lucro.</p>
+            <p>No se promueve ni se permite la publicación de contenido ilegal.</p>
+            <p>El propósito es compartir fotos, videos, música, letras de canciones y enlaces a YouTube.</p>
+            <p>Gracias por tu comprensión. — Aldo Arturo</p>
+    </div>  -->
+
+    <!-- 
+    ============================================================
+    CÓDIGO COMENTADO: Lector inteligente de letras y música
+    Para activarlo, quita los comentarios de abajo y comenta
+    el mensaje de mantenimiento.
+    ===========================================================-->
+    
+    <div class="container music-section" id="musicApp">
+        <h2>🎵 Letras y Música</h2>
+        <div id="fileButtons"></div>
+        <div id="lyricDisplay" class="lyrics-container"></div>
+    </div>
+    <a href="newPage"><button>ATRAS</button></button>
+
+    <script>
+        // Simula la lectura de archivos .liryc en la carpeta "text/"
+        async function loadTextFiles() {
+            const files = ['Brillando.liryc', 'No quiero perderte.liryc', 'Midnight Emoji Touch.EN.liryc', 'Tu y Yo.liryc']; // Agrega aquí los nombres reales
+            const buttonsContainer = document.getElementById('fileButtons');
+            buttonsContainer.innerHTML = '';
+
+            for (let file of files) {
+                try {
+                    const response = await fetch('text/' + file);
+                    const text = await response.text();
+                    const audioName = file.replace('.liryc', '.mp3');
+                    const btn = document.createElement('button');
+                    btn.className = 'file-button';
+                    btn.textContent = file.replace('.liryc', '');
+                    btn.onclick = () => {
+                        let formatted = text.replace(/\[(.*?)\]/g, '<span class="bracket-text">[$1]</span>');
+                        let html = `<h3>${file.replace('.liryc', '')}</h3><p>${formatted}</p>`;
+                        html += `<audio controls src="music/${audioName}" style="margin-top:15px;"></audio>`;
+                        document.getElementById('lyricDisplay').innerHTML = html;
+                    };
+                    buttonsContainer.appendChild(btn);
+                } catch (e) {
+                    console.log('Archivo no encontrado:', file);
+                }
+            }
+        }
+        window.onload = loadTextFiles;
+    </script>
+</body>
+</html>
